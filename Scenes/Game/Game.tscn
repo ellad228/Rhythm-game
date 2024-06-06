@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ocspwg07ulqw"]
+
+[ext_resource type="Script" path="res://Scripts/GUI/game.gd" id="1_dd6ka"]
+[ext_resource type="PackedScene" uid="uid://chquxyagptl6c" path="res://Scenes/Game/Level_Map.tscn" id="2_csxp0"]
+[ext_resource type="PackedScene" uid="uid://dcw7xg6iftki0" path="res://Scenes/Game/conductor.tscn" id="3_gr5ro"]
+[ext_resource type="PackedScene" uid="uid://dfn2lfmerbpmg" path="res://Scenes/UI/UI.tscn" id="5_svgtj"]
+
+[node name="Game" type="Node2D" node_paths=PackedStringArray("level_Map", "conductor", "ui")]
+process_physics_priority = 20
+script = ExtResource("1_dd6ka")
+level_Map = NodePath("Level_Map")
+conductor = NodePath("Conductor")
+ui = NodePath("UI")
+
+[node name="Level_Map" parent="." instance=ExtResource("2_csxp0")]
+process_physics_priority = 18
+
+[node name="Conductor" parent="." instance=ExtResource("3_gr5ro")]
+process_physics_priority = 19
+
+[node name="UI" parent="." instance=ExtResource("5_svgtj")]
+
+[connection signal="finished" from="Conductor" to="Level_Map" method="_on_conductor_finished"]

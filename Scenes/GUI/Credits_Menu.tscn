@@ -1,0 +1,132 @@
+[gd_scene load_steps=3 format=3 uid="uid://pijx1jwmo0ko"]
+
+[ext_resource type="Theme" uid="uid://uelmlaui1ayg" path="res://Themes/GUI/new_theme.tres" id="1_n4mtg"]
+[ext_resource type="Script" path="res://Scripts/GUI/Credits_Menu.gd" id="1_ob20q"]
+
+[node name="Credits_Menu" type="Control" node_paths=PackedStringArray("credits")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_n4mtg")
+script = ExtResource("1_ob20q")
+credits = NodePath("MarginContainer/ScrollContainer/VBoxContainer/Credits")
+credits_path = "res://Assets/Important txt/Credits.txt"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Credits" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 70
+text = "Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228
+Programmer: ellad228"
+
+[node name="Back" type="Button" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "Back"
+
+[connection signal="button_up" from="MarginContainer/Back" to="." method="_on_back_button_up"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://tnmbcdptmo86"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Level_Editor.gd" id="1_l0jg5"]
+[ext_resource type="PackedScene" uid="uid://cwulxq0434cgp" path="res://Scenes/Game/circle.tscn" id="2_um5e8"]
+
+[node name="Level_Editor" type="Node2D"]
+script = ExtResource("1_l0jg5")
+circle = ExtResource("2_um5e8")

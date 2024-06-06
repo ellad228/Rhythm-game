@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvecvsqd6t61c"]
+
+[ext_resource type="Script" path="res://Scenes/GUI/Level_Finish.gd" id="1_i26ri"]
+[ext_resource type="Theme" uid="uid://uelmlaui1ayg" path="res://Themes/GUI/new_theme.tres" id="1_m7gya"]
+[ext_resource type="PackedScene" uid="uid://ca1gnggygha4r" path="res://Scenes/GUI/Start_Screen.tscn" id="2_dp776"]
+
+[node name="Level_Finish" type="Control" node_paths=PackedStringArray("accuracy_label", "score_Label", "difficulty_Label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m7gya")
+script = ExtResource("1_i26ri")
+accuracy_label = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Accuracy")
+score_Label = NodePath("MarginContainer/VBoxContainer/HBoxContainer2/Score")
+difficulty_Label = NodePath("MarginContainer/VBoxContainer/HBoxContainer/Accuracy")
+start_Screen = ExtResource("2_dp776")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 100
+text = "Level finished"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Difficulty" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Hard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 80
+text = "Accuracy: "
+
+[node name="Accuracy" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 80
+text = "0%"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Final score: "
+
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 80
+text = "0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 80
+text = "Back"
+
+[connection signal="button_up" from="MarginContainer/VBoxContainer/HBoxContainer3/Back" to="." method="_on_back_button_up"]

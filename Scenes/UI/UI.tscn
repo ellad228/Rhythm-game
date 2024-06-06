@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfn2lfmerbpmg"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Score.gd" id="1_30hyc"]
+[ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="1_nhy0e"]
+[ext_resource type="Theme" uid="uid://uelmlaui1ayg" path="res://Themes/GUI/new_theme.tres" id="2_8unrj"]
+[ext_resource type="Script" path="res://Scripts/UI/Start_Button.gd" id="3_n3ndg"]
+
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("Score_Counter", "Start_Button")]
+script = ExtResource("1_nhy0e")
+Score_Counter = NodePath("MarginContainer/Score_Counter")
+Start_Button = NodePath("Start_Button")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 58.0
+offset_bottom = 107.0
+theme = ExtResource("2_8unrj")
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Score_Counter" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_30hyc")
+
+[node name="Start_Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -45.5
+offset_right = 75.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_8unrj")
+theme_override_font_sizes/font_size = 60
+text = "Start"
+script = ExtResource("3_n3ndg")
+
+[connection signal="button_down" from="Start_Button" to="Start_Button" method="_on_button_down"]

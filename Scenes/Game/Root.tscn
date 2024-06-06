@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://tlkhffdacct1"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Root.gd" id="1_ap2hy"]
+[ext_resource type="PackedScene" uid="uid://ocspwg07ulqw" path="res://Scenes/Game/Game.tscn" id="2_t17cs"]
+[ext_resource type="PackedScene" uid="uid://be3uryd2qgye1" path="res://Scenes/GUI/Pause_Menu.tscn" id="5_mrjty"]
+[ext_resource type="PackedScene" uid="uid://cvecvsqd6t61c" path="res://Scenes/GUI/Level_Finish.tscn" id="7_pvk37"]
+
+[node name="Root" type="Node" node_paths=PackedStringArray("game", "level_Finish", "pause_Menu")]
+process_physics_priority = 99
+script = ExtResource("1_ap2hy")
+game = NodePath("Game")
+level_Finish = NodePath("Level_Finish")
+pause_Menu = NodePath("Pause_Menu")
+
+[node name="Game" parent="." instance=ExtResource("2_t17cs")]
+
+[node name="Level_Finish" parent="." instance=ExtResource("7_pvk37")]
+visible = false
+
+[node name="Pause_Menu" parent="." instance=ExtResource("5_mrjty")]
+visible = false

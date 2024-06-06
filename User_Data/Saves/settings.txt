@@ -1,0 +1,2 @@
+music_Volume=74
+sfx=73

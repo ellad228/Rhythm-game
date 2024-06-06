@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhahbvtcwycsf"]
+
+[ext_resource type="AudioStream" uid="uid://ddanfxe02cy8p" path="res://Assets/first_experience.mp3" id="1_c0wl7"]
+[ext_resource type="Script" path="res://Scripts/Game/Conductor(old).gd" id="2_7fnv3"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_c0wl7")
+script = ExtResource("2_7fnv3")
+BPM = 120.0

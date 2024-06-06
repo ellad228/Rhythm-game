@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://chquxyagptl6c"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Level_Map.gd" id="1_ejr2n"]
+[ext_resource type="PackedScene" uid="uid://ck11uhxixedcf" path="res://Scenes/Game/Hit_Circle.tscn" id="2_wcj1f"]
+
+[node name="Level_Map" type="Node2D"]
+script = ExtResource("1_ejr2n")
+hit_Circle = ExtResource("2_wcj1f")

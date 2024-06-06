@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://duqaj76damb5g"]
+
+[ext_resource type="Texture2D" uid="uid://dqrrkhkpcv6yi" path="res://Themes/GUI/Button_disabled.png" id="1_duedi"]
+
+[resource]
+texture = ExtResource("1_duedi")
+texture_margin_left = 12.0
+texture_margin_top = 6.0
+texture_margin_right = 12.0
+texture_margin_bottom = 6.0

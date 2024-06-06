@@ -1,0 +1,250 @@
+[gd_scene load_steps=4 format=3 uid="uid://0uvyith68gvj"]
+
+[ext_resource type="Theme" uid="uid://uelmlaui1ayg" path="res://Themes/GUI/new_theme.tres" id="1_j3b4y"]
+[ext_resource type="Script" path="res://Scripts/GUI/Settings_Menu.gd" id="1_x616a"]
+
+[sub_resource type="Theme" id="Theme_2skmq"]
+default_font_size = 80
+
+[node name="Settings_Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_j3b4y")
+script = ExtResource("1_x616a")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_2skmq")
+theme_override_constants/side_margin = 1
+theme_override_font_sizes/font_size = 80
+
+[node name="Video" type="TabBar" parent="MarginContainer/TabContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Video"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/TabContainer/Video/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Max_Framerate" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "Max Framerate"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Percent" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+
+[node name="Percent2" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+
+[node name="Percent3" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 80
+alignment = 1
+item_count = 4
+selected = 1
+popup/item_0/text = "30"
+popup/item_0/id = 0
+popup/item_1/text = "60"
+popup/item_1/id = 1
+popup/item_2/text = "90"
+popup/item_2/id = 2
+popup/item_3/text = "120"
+popup/item_3/id = 3
+
+[node name="Resolution" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "Resolution"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="Percent" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+
+[node name="Percent2" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+
+[node name="Percent3" type="Label" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/TabContainer/Video/MarginContainer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 80
+alignment = 1
+item_count = 1
+selected = 0
+popup/item_0/text = "1920x1080"
+popup/item_0/id = 0
+
+[node name="Audio" type="TabBar" parent="MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="Music_Volume" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "Music volume"
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Percent" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 80
+text = "0%"
+
+[node name="MusicVolume" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 100.0
+
+[node name="SFX" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "SFX"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Percent" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 80
+text = "0%"
+
+[node name="SFX" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 100.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Cancel" type="Button" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 80
+text = "Cancel"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Set_To_Default" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 80
+text = "Set to default"
+
+[node name="Save" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 80
+text = "Save"
+
+[connection signal="value_changed" from="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer/HBoxContainer/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="MarginContainer/TabContainer/Audio/MarginContainer/GridContainer/HBoxContainer2/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="button_up" from="MarginContainer/MarginContainer/Cancel" to="." method="_on_cancel_button_up"]
+[connection signal="button_up" from="MarginContainer/MarginContainer/HBoxContainer/Set_To_Default" to="." method="_on_set_to_default_button_up"]
+[connection signal="button_up" from="MarginContainer/MarginContainer/HBoxContainer/Save" to="." method="_on_save_button_up"]

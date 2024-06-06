@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca1gnggygha4r"]
+
+[ext_resource type="Script" path="res://Root.gd" id="1_gsno4"]
+[ext_resource type="PackedScene" uid="uid://cp4md5563kno4" path="res://Scenes/GUI/Main_Menu.tscn" id="2_mfqjl"]
+[ext_resource type="PackedScene" uid="uid://0uvyith68gvj" path="res://Scenes/GUI/Settings_Menu.tscn" id="3_kgrug"]
+[ext_resource type="PackedScene" uid="uid://pijx1jwmo0ko" path="res://Scenes/GUI/Credits_Menu.tscn" id="4_pt83c"]
+[ext_resource type="PackedScene" uid="uid://dsmhpcb74f6jt" path="res://Scenes/GUI/Exit_Menu.tscn" id="5_qyqp4"]
+[ext_resource type="PackedScene" uid="uid://bhcrnsumpxy7" path="res://Scenes/GUI/Level_Select.tscn" id="6_ufamv"]
+
+[node name="Start_Screen" type="Node" node_paths=PackedStringArray("main_Menu", "level_Select", "settings_Menu", "credits_Menu", "exit_Menu")]
+script = ExtResource("1_gsno4")
+main_Menu = NodePath("Main_Menu")
+level_Select = NodePath("Level_Select")
+settings_Menu = NodePath("Settings_Menu")
+credits_Menu = NodePath("Credits_Menu")
+exit_Menu = NodePath("Exit_Menu")
+
+[node name="Main_Menu" parent="." instance=ExtResource("2_mfqjl")]
+
+[node name="Settings_Menu" parent="." instance=ExtResource("3_kgrug")]
+visible = false
+
+[node name="Credits_Menu" parent="." instance=ExtResource("4_pt83c")]
+visible = false
+
+[node name="Exit_Menu" parent="." instance=ExtResource("5_qyqp4")]
+visible = false
+
+[node name="Level_Select" parent="." instance=ExtResource("6_ufamv")]
+visible = false

@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://be3uryd2qgye1"]
+
+[ext_resource type="Theme" uid="uid://uelmlaui1ayg" path="res://Themes/GUI/new_theme.tres" id="1_ito6f"]
+[ext_resource type="Script" path="res://Scenes/GUI/Pause_Menu.gd" id="1_k5v6q"]
+[ext_resource type="PackedScene" uid="uid://ca1gnggygha4r" path="res://Scenes/GUI/Start_Screen.tscn" id="2_iij1p"]
+[ext_resource type="PackedScene" uid="uid://ocspwg07ulqw" path="res://Scenes/Game/Game.tscn" id="3_sfqg5"]
+
+[node name="Pause_Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ito6f")
+script = ExtResource("1_k5v6q")
+start_Screen = ExtResource("2_iij1p")
+game = ExtResource("3_sfqg5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 96
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 96
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Paused"
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Continue" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 80
+text = "Continue"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 80
+text = "Exit"
+
+[connection signal="button_up" from="MarginContainer/VBoxContainer/Continue" to="." method="_on_continue_button_up"]
+[connection signal="button_up" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_button_up"]

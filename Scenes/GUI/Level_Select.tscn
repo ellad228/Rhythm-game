@@ -1,0 +1,197 @@
+[gd_scene load_steps=11 format=3 uid="uid://bhcrnsumpxy7"]
+
+[ext_resource type="Script" path="res://Scripts/GUI/Level_Select.gd" id="1_21lci"]
+[ext_resource type="Theme" uid="uid://uelmlaui1ayg" path="res://Themes/GUI/new_theme.tres" id="1_bsxaq"]
+[ext_resource type="Script" path="res://Scripts/GUI/Level_Button.gd" id="3_5erop"]
+[ext_resource type="Script" path="res://Scripts/Levels/First_Level.gd" id="3_xlhkn"]
+[ext_resource type="AudioStream" uid="uid://ddanfxe02cy8p" path="res://Assets/first_experience.mp3" id="4_mnxqf"]
+[ext_resource type="Script" path="res://Scripts/Levels/Second_Level.gd" id="4_smo6k"]
+[ext_resource type="Script" path="res://Scripts/Levels/Third_Level.gd" id="5_st4je"]
+[ext_resource type="AudioStream" uid="uid://bali4qu6pki5l" path="res://Assets/lo-fi.mp3" id="7_ey6bu"]
+[ext_resource type="AudioStream" uid="uid://dtqgqt8hrny6d" path="res://Assets/16.01.2024v3.mp3" id="9_rqmg4"]
+[ext_resource type="Script" path="res://Scripts/GUI/Difficulty_Button.gd" id="10_ojd6u"]
+
+[node name="Level_Select" type="Control" node_paths=PackedStringArray("level_Name", "difficulty_label", "high_Score", "accuracy", "level_stats", "level_Buttons")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_bsxaq")
+script = ExtResource("1_21lci")
+game_Path = "res://Scenes/Game/Root.tscn"
+level_Name = NodePath("MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Level")
+difficulty_label = NodePath("MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Difficulty")
+high_Score = NodePath("MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer3/High_Score")
+accuracy = NodePath("MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2/Accuracy")
+level_stats = NodePath("MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer")
+level_Buttons = NodePath("MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Level_Button" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "level 1"
+script = ExtResource("3_5erop")
+level = ExtResource("3_xlhkn")
+music = ExtResource("4_mnxqf")
+
+[node name="Level_Button2" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "level 2"
+script = ExtResource("3_5erop")
+level = ExtResource("4_smo6k")
+music = ExtResource("7_ey6bu")
+
+[node name="Level_Button3" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "level 3"
+script = ExtResource("3_5erop")
+level = ExtResource("5_st4je")
+music = ExtResource("9_rqmg4")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 48
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Level" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Difficulty" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Hard"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Highscore: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="High_Score" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Accuracy: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Accuracy" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "0"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+
+[node name="Hard" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+toggle_mode = true
+button_pressed = true
+text = "Hard"
+script = ExtResource("10_ojd6u")
+
+[node name="Normal" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+toggle_mode = true
+text = "Normal"
+script = ExtResource("10_ojd6u")
+
+[node name="Easy" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+toggle_mode = true
+button_pressed = true
+text = "Easy"
+script = ExtResource("10_ojd6u")
+
+[node name="Play" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 80
+text = "Play"
+
+[connection signal="button_up" from="MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Level_Button" to="MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Level_Button" method="_on_button_up"]
+[connection signal="level_select" from="MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Level_Button" to="." method="_on_level_button_level_select"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Level_Button2" to="MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Level_Button2" method="_on_button_up"]
+[connection signal="level_select" from="MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Level_Button2" to="." method="_on_level_button_level_select"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Level_Button3" to="MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Level_Button3" method="_on_button_up"]
+[connection signal="level_select" from="MarginContainer/HBoxContainer/MarginContainer/ScrollContainer/VBoxContainer/Level_Button3" to="." method="_on_level_button_level_select"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/Hard" to="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/Hard" method="_on_button_up"]
+[connection signal="difficulty_select" from="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/Hard" to="." method="_on_difficulty_select"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/Normal" to="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/Normal" method="_on_button_up"]
+[connection signal="difficulty_select" from="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/Normal" to="." method="_on_difficulty_select"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/Easy" to="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/Easy" method="_on_button_up"]
+[connection signal="difficulty_select" from="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/HBoxContainer/Easy" to="." method="_on_difficulty_select"]
+[connection signal="button_up" from="MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer/Play" to="." method="_on_play_button_up"]

@@ -1,0 +1,173 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfbkc4d62e603"]
+
+[ext_resource type="Script" path="res://Scripts/GUI/Level_Select.gd" id="1_2en0l"]
+
+[node name="Level_Select" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2en0l")
+game_Path = "res://Scenes/Game/Root.tscn"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Name" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "first_level"
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer/ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 80
+text = "Play"
+
+[node name="Control" type="Control" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+
+[node name="Name" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "second_level"
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer2/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer2/ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 80
+disabled = true
+text = "Soon..."
+
+[node name="Control2" type="Control" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Name" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "third_level"
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer3/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer3/ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 80
+disabled = true
+text = "Soon..."
+
+[node name="Back" type="Button" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "Back"
+
+[connection signal="button_up" from="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer2/Play" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="MarginContainer/ScrollContainer/HBoxContainer/VBoxContainer3/Play" to="." method="_on_play_button_up"]
+[connection signal="button_up" from="MarginContainer/Back" to="." method="_on_back_button_up"]

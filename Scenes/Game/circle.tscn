@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwulxq0434cgp"]
+
+[ext_resource type="Texture2D" uid="uid://ca7u08tk8wlkl" path="res://Assets/Hit_Circles/Hit_Circle.png" id="1_af50j"]
+
+[node name="Circle" type="Sprite2D"]
+texture = ExtResource("1_af50j")

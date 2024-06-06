@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://ck11uhxixedcf"]
+
+[ext_resource type="Script" path="res://Scripts/Game/Hit_Circle.gd" id="1_4u537"]
+[ext_resource type="SpriteFrames" uid="uid://cgkkvjkibfg6h" path="res://Assets/Animation/Appear.tres" id="2_pqxgb"]
+[ext_resource type="SpriteFrames" uid="uid://c12eljemrda3k" path="res://Assets/Animation/Fade.tres" id="3_h1k3q"]
+[ext_resource type="AudioStream" uid="uid://c4csngp6y3d83" path="res://Assets/basketball_tap.mp3" id="4_gc2vk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vemlb"]
+radius = 34.0
+
+[node name="Area2D" type="Area2D" node_paths=PackedStringArray("animation", "audio_Player")]
+z_as_relative = false
+scale = Vector2(3, 3)
+script = ExtResource("1_4u537")
+appear = ExtResource("2_pqxgb")
+fade = ExtResource("3_h1k3q")
+animation = NodePath("AnimatedSprite2D")
+audio_Player = NodePath("AudioStreamPlayer")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vemlb")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_gc2vk")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
